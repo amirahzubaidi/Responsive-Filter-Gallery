@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="box">
+        <ul class="controls">
+            <li class="button" data-filter="Aircraft Category">Aircraft Category</li>
+            <li class="button" data-filter="LighterThanAir">LighterThanAir</li>
+            <li class="button" data-filter="Rotorcraft">Rotorcraft</li>
+            <li class="button" data-filter="Airplane">Airplane</li>
+            <li class="button" data-filter="Glider">Glider</li>
+
+        </ul>
+        <div class="images">
+            <a href="img/lighter than air 01.jpg" class="img LighterThanAir">
+                <img src="img/lighter than air 01.jpg" alt="img">
+            </a>
+            <a href="img/lighter than air 02.jpg" class="img LighterThanAir">
+                <img src="img/lighter than air 02.jpg" alt="img">
+            </a>
+            <a href="img/lighter than air 03.jpg" class="img LighterThanAir">
+                <img src="img/lighter than air 03.jpg" alt="img">
+            </a>
+            <!-- /Lighter than air -->
+
+            <a href="img/rotorcraft 01.jpg" class="img Rotorcraft">
+                <img src="img/rotorcraft 01.jpg" alt="img">
+            </a>
+            <a href="img/rotorcraft 02.jpg" class="img Rotorcraft">
+                <img src="img/rotorcraft 02.jpg" alt="img">
+            </a>
+            <a href="img/rotorcraft 03.jpg" class="img Rotorcraft">
+                <img src="img/rotorcraft 03.jpg" alt="img">
+            </a>
+            <!-- /Rotorcraft -->
+
+            <a href="img/airplane 01.jpg" class="img Airplane">
+                <img src="img/airplane 01.jpg" alt="img">
+            </a>
+            <a href="img/airplane 02.jpg" class="img Airplane">
+                <img src="img/airplane 02.jpg" alt="img">
+            </a>
+            <a href="img/airplane 03.jpg" class="img Airplane">
+                <img src="img/airplane 03.jpg" alt="img">
+            </a>
+            <!-- /Airplane -->
+
+            <a href="img/glider 01.jpg" class="img Glider">
+                <img src="img/glider 01.jpg" alt="img">
+            </a>
+            <a href="img/glider 02.jpg" class="img Glider">
+                <img src="img/glider 02.jpg" alt="img">
+            </a>
+            <a href="img/glider 03.jpg" class="img Glider">
+                <img src="img/glider 03.jpg" alt="img">
+            </a>
+            <!-- /Glider -->
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+    
+        $(document).ready(function(){
+            $('.button').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var filter =$(this).attr('data-filter')
+
+                if(filter == 'Aircraft Category'){
+                    $('.img').show(100);
+                }else{
+                    $('.img').not('.'+filter).hide(100);
+                    $('.img').filter('.'+filter).show(100);
+                    
+                }
+            })
+        });
+
+        $('.img-container').magnificPopup({
+            delegate: 'a',
+            type: 'img',
+            gallery:{
+                enabled: true
+            }
+        });
+    </script>
+</body>
+</html>
